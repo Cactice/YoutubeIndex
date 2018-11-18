@@ -1,0 +1,23 @@
+{
+  "name"        : "youtube-index",
+  "version"     : "0.1.0",
+  "private"     : true,
+  "homepage"    : "http://cactice.github.io/youtube-index",
+  "dependencies": {
+  },
+  "scripts": {
+    "postinstall": "cd backend && npm install",
+    "test"       : "cd backend && echo \"Error: no test specified\" && exit 1",
+    "build"      : "cd backend && rimraf dist/ && babel ./ --out-dir dist/ --ignore ./node_modules,./.babelrc,./package.json,./npm-debug.log --copy-files",
+    "start"      : "cd backend && npm run build && node dist/index.js"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
+}
