@@ -56,6 +56,7 @@ typings/
 
 # dotenv environment variables file
 .env
+.env_profile
 
 # parcel-bundler cache (https://parceljs.org/)
 .cache
@@ -74,3 +75,6 @@ typings/
 
 # FuseBox cache
 .fusebox/
+
+# ipython notebook checkpoints
+.ipynb_checkpoints
