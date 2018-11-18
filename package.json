@@ -7,9 +7,9 @@
   },
   "scripts": {
     "postinstall": "cd backend && npm install",
-    "test"       : "cd backend && echo \"Error: no test specified\" && exit 1",
-    "build"      : "cd backend && rimraf dist/ && babel ./ --out-dir dist/ --ignore ./node_modules,./.babelrc,./package.json,./npm-debug.log --copy-files",
-    "start"      : "cd backend && npm run build && node dist/index.js"
+    "test"       : "cd backend && npm test",
+    "build"      : "cd backend && npm build",
+    "start"      : "cd backend && npm install && npm start"
   },
   "eslintConfig": {
     "extends": "react-app"
