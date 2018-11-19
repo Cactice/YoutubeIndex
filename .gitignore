@@ -24,4 +24,4 @@ yarn-debug.log*
 yarn-error.log*
 
 service-account.json
-client-secrets.json
+client-secret.json
