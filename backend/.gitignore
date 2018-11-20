@@ -79,5 +79,7 @@ typings/
 # ipython notebook checkpoints
 .ipynb_checkpoints
 
+dist/
 
 client_secret.json
+
