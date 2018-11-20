@@ -9,8 +9,10 @@ app.get('/', (req, res) => res.send('Hello World!'))
 app.get('/url/:videoId', (req, res) => {
     let videoId = req.param('videoId')
     let transcript = youtubeTranscript(videoId)
-    console.log(transcript)
-    res.send(JSON.stringify(transcript));
+    transcript.then((result) => {
+        console.log('ponyo',result,'ponyo')
+        res.send(JSON.stringify(result));
+    })   
 })
 
 app.listen(dynamicPort || port, () => console.log(`Example app listening on port ${port}!`))

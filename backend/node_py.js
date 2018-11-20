@@ -2,6 +2,7 @@ var {PythonShell} = require('python-shell');
 var pyshell = new PythonShell('./youtube_transcript.py');
 
 export default function youtubeTranscript(id){ 
+
   pyshell.send(id);
   let jsonObj 
 
@@ -14,9 +15,14 @@ export default function youtubeTranscript(id){
     console.log('The exit code was: ' + code);
     console.log('The exit signal was: ' + signal);
     console.log('finished');
-    console.log(jsonObj)
   });
 
-    return jsonObj
+    return new Promise(function(resolve, reject){ 
+        setInterval(function() {
+            if(typeof jsonObj !== "undefined"){
+                resolve(jsonObj)
+            }
+        }, 300); 
+    })
 }
 
