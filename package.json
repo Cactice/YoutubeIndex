@@ -1,15 +1,15 @@
 {
-  "name"        : "youtube-index",
-  "version"     : "0.1.0",
-  "private"     : true,
-  "homepage"    : "http://cactice.github.io/youtube-index",
+  "name": "youtube-index",
+  "version": "0.1.0",
+  "private": true,
+  "homepage": "http://cactice.github.io/youtube-index",
   "dependencies": {
   },
   "scripts": {
     "postinstall": "cd backend && npm install",
-    "test"       : "cd backend && npm test",
-    "build"      : "cd backend && npm build",
-    "start"      : "cd backend && npm install && npm start"
+    "test": "cd backend && npm test",
+    "build": "cd backend && npm build",
+    "start": "cd backend && npm install && npm start"
   },
   "eslintConfig": {
     "extends": "react-app"
