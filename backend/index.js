@@ -1,5 +1,5 @@
 import express from 'express'
-import {youtubeTranscript, summarize}from './node_py'
+import {renderTranscript, renderSummary} from './src/render.js'
 import cors from 'cors'
 
 const port        = 3000
@@ -10,20 +10,22 @@ app.use(cors())
 
 app.get('/', (req, res) => res.send('Hello World!'))
 
-app.get('/url/:videoId', (req, res, next) => {
+app.get('/url/:videoId', (req, res) => renderTranscript(req,res))
 
+/*
     let videoId = req.params.videoId
     let fetchTranscript = youtubeTranscript(videoId)
 
     fetchTranscript.then((transcript) => {
         res.send(JSON.stringify(transcript));
-        next();
     })   
+    */
 
-})
 
-app.get('/summarize/:text/:language', (req, res) => {
 
+app.get('/summarize/:text/:language', (req, res) => renderSummary(req,res))
+
+/*
     let text = req.params.text
     let language = req.params.language
 
@@ -31,7 +33,6 @@ app.get('/summarize/:text/:language', (req, res) => {
     fetchSummary.then((summary) => {
         res.send(JSON.stringify(summary));
     })   
-
-})
+*/
 
 app.listen(dynamicPort || port, () => console.log(`Example app listening on port ${port}!`))
