@@ -1,4 +1,4 @@
-import {youtubeTranscript, summarize} from './python/node_py'
+import {youtubeTranscript, summarize} from '../python/node_py'
 
 export const renderTranscript = (req, res) => {
     let videoId = req.params.videoId

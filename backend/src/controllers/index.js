@@ -1,5 +1,5 @@
 import express from 'express'
-import {renderTranscript, renderSummary} from './src/render.js'
+import {renderTranscript, renderSummary} from '../models/render.js'
 import cors from 'cors'
 
 const port        = 3000
