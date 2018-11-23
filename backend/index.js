@@ -10,7 +10,7 @@ app.use(cors())
 
 app.get('/', (req, res) => res.send('Hello World!'))
 
-app.get('/url/:videoId', (req, res) => renderTranscript(req,res))
+app.get('/url/:videoId',renderTranscript)
 
 /*
     let videoId = req.params.videoId
@@ -23,7 +23,7 @@ app.get('/url/:videoId', (req, res) => renderTranscript(req,res))
 
 
 
-app.get('/summarize/:text/:language', (req, res) => renderSummary(req,res))
+app.get('/summarize/:text/:language',renderSummary)
 
 /*
     let text = req.params.text
