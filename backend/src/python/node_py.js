@@ -7,7 +7,7 @@ export function youtubeTranscript(id){
     return fetchPythonResult(id, pythonPath)
 }
 
-export function summarize(text,lang){
+export function summarize(text,lang='english'){
     let pythonPath = path.join(__dirname, '/summarize.py')
     let jsonObj    = JSON.stringify([text,lang])
 
