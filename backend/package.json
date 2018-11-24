@@ -4,7 +4,7 @@
   "description": "This is the backend for youtube-index",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "npm run build && jest",
     "build": "rimraf dist/ && babel ./ --out-dir dist/ --ignore ./node_modules,./.babelrc,./package.json,./npm-debug.log --copy-files",
     "start": "npm run build && node dist/src/controllers/index.js"
   },
@@ -20,6 +20,7 @@
     "rimraf": "^2.6.1"
   },
   "devDependencies": {
+    "jest": "^23.6.0",
     "nodemon": "^1.18.6"
   }
 }
