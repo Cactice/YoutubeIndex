@@ -10,8 +10,6 @@ export const renderTranscript = (req, res) => {
 }
 
 export const renderSummary = (req, res) => {
-
-    console.log('heloo')
     let text = req.params.text
     let language = req.params.language
 
