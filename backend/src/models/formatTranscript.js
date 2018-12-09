@@ -6,6 +6,6 @@ export default function formatTranscript(transcript){
         each.startSeconds = Math.floor(each.start%60)
         return each
     })
-    grouped = _.groupBy(transcript, 'startMinutes')
+    let grouped = _.groupBy(transcript, 'startMinutes')
     return grouped
 }
