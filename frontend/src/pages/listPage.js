@@ -5,7 +5,6 @@ import Head from 'next/head'
 import axios from 'axios';
 
 
-var halt = 'alkdjf'
 export default class Example extends React.Component {
 
   static async getInitialProps () {
@@ -20,7 +19,7 @@ export default class Example extends React.Component {
   }
 
   render () {
-    console.log('hey',this.props.data[0])
+    console.log('heylo',this.props.data['0'])
     // Return properties
     return (
       <div>
