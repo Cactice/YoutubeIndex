@@ -12,14 +12,14 @@ export default class Example extends React.Component {
     // async get is completed
     const res = await axios.get('https://youtube-index-backend.herokuapp.com/url/pKeynMccbZs')
     // Return properties
-    return {data: res}
+    return {data: res.data}
   }
   constructor(props, context) {
     super(props, context);
   }
 
   render () {
-    console.log('heylo',this.props.data['0'])
+    console.log('heylo', this.props.data[0])
     // Return properties
     return (
       <div>
@@ -40,7 +40,7 @@ export default class Example extends React.Component {
                   </tr>
                 </thead>
                 <tbody>
-                {this.props.data.map((standing, i) => {
+                {this.props.data[0].map((standing, i) => {
                   const oddOrNot = i % 2 == 1 ? "pure-table-odd" : "";
                   return (
                       <tr key={i} className={oddOrNot}>
