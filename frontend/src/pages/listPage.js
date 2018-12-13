@@ -28,19 +28,23 @@ export default class TranscriptLists extends React.Component {
             <meta name="viewport" content="initial-scale=1.0, width=device-width" />
             <link rel="stylesheet" href="https://unpkg.com/purecss@0.6.1/build/pure-min.css" />
         </Head>
-        <div className="pure-g">
-            <div className="pure-u-1-3"></div>
-            <div className="pure-u-1-3">
+        <div className='tableStyle'>
             {
               this.props.data.map( (each) => {
-                return <MinuteTranscript data={each}/>
+                return (
+                  <center>
+                    <MinuteTranscript data={each}/>
+                  </center>
+                )
               })
             }
-                <MinuteTranscript data={this.props.data[0]}/>
-                <MinuteTranscript data={this.props.data[1]}/>
-            </div>
-            <div className="pure-u-1-3"></div>
         </div>
+        <style jsx global>{`
+          .tableStyle {
+              text-align: center;
+              padding   : 50px;
+          }
+        `}</style>
       </div>
     );
   }
