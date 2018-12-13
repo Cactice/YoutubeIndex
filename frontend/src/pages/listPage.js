@@ -1,11 +1,12 @@
 import Header from '../components/Header'
 import Layout from '../components/MyLayout.js'
+import MinuteTranscript from '../components/MinuteTranscript'
 import Head from 'next/head'
 
 import axios from 'axios';
 
 
-export default class Example extends React.Component {
+export default class TranscriptLists extends React.Component {
 
   static async getInitialProps () {
     // res is assigned the response once the axios
@@ -39,17 +40,7 @@ export default class Example extends React.Component {
                     <th>P</th>
                   </tr>
                 </thead>
-                <tbody>
-                {this.props.data[0].map((standing, i) => {
-                  const oddOrNot = i % 2 == 1 ? "pure-table-odd" : "";
-                  return (
-                      <tr key={i} className={oddOrNot}>
-                        <td>{standing.start}</td>
-                        <td>{standing.text}</td>
-                      </tr>
-                    );
-                })}
-                </tbody>
+                <MinuteTranscript data={this.props.data[0]}/>
               </table>
             </div>
             <div className="pure-u-1-3"></div>
