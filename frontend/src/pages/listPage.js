@@ -2,7 +2,6 @@ import Header from '../components/Header'
 import Layout from '../components/MyLayout.js'
 import MinuteTranscript from '../components/MinuteTranscript'
 import Head from 'next/head'
-
 import axios from 'axios';
 
 
@@ -32,16 +31,13 @@ export default class TranscriptLists extends React.Component {
         <div className="pure-g">
             <div className="pure-u-1-3"></div>
             <div className="pure-u-1-3">
-              <h1>Barclays Premier League</h1>
-              <table className="pure-table">
-                <thead>
-                  <tr>
-                    <th>Position</th>
-                    <th>P</th>
-                  </tr>
-                </thead>
+            {
+              this.props.data.map( (each) => {
+                return <MinuteTranscript data={each}/>
+              })
+            }
                 <MinuteTranscript data={this.props.data[0]}/>
-              </table>
+                <MinuteTranscript data={this.props.data[1]}/>
             </div>
             <div className="pure-u-1-3"></div>
         </div>
