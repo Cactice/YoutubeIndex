@@ -11,10 +11,13 @@ export default class MinuteTranscript extends React.Component {
   }
 
   async summarize(transcript){
-    var summaryString = this.props.data.map(function(eachLine){
+    let summaryString = this.props.data.map(function(eachLine){
         return eachLine.text;
-    }).join();
-    const url = 'https://youtube-index-backend.herokuapp.com/summarize/'+ JSON.stringify(summaryString) + '/en'
+    }).join('. ');
+
+    let summarySentences = summaryString
+    console.log('sentence: ',summarySentences)
+    const url = 'https://youtube-index-backend.herokuapp.com/summarize/'+ encodeURI(summarySentences) + '/english'
     console.log(url)
     const res = await axios.get(url)
     this.setState({summary:res.data})

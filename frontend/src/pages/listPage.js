@@ -10,7 +10,7 @@ export default class TranscriptLists extends React.Component {
   static async getInitialProps () {
     // res is assigned the response once the axios
     // async get is completed
-    const res = await axios.get('https://youtube-index-backend.herokuapp.com/url/pKeynMccbZs')
+    const res = await axios.get('https://youtube-index-backend.herokuapp.com/url/IVjmIovOPek')
     // Return properties
     return {data: res.data}
   }
