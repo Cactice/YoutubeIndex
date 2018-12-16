@@ -1,6 +1,7 @@
 import { Panel, PanelGroup, Well, Button , Collapse, Fade} from 'react-bootstrap';
 import Head from 'next/head'
 import '../../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import Header from '../components/Header'
 export default class Example extends React.Component {
   constructor(props, context) {
     super(props, context);
@@ -19,6 +20,7 @@ export default class Example extends React.Component {
         <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,700,800" rel="stylesheet" />
       </Head>
     <div>
+      <Header/>
       <Button onClick={()=>this.setState({open:!this.state.open})}>afsda</Button>
       <Collapse in={this.state.open}>
         <div>

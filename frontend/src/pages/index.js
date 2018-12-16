@@ -5,17 +5,10 @@ import Head from 'next/head'
 import Markdown from 'react-markdown'
 import { Button , Collapse } from 'react-bootstrap';
 import Link from 'next/link'
+import Router from 'next/router'
 
 let paragraph = `
-
-This is our blog post.
-Yes. We can have a [link](/listPage).
-And we can have a title as well.
-
-### This is a title
-
-And here's the content.
-
+### YouIndex
 `
 
 export default class Index extends React.Component {
@@ -27,8 +20,11 @@ export default class Index extends React.Component {
     };
   }
   render () {
-
-  var open = ()=>{this.setState({open:!this.state.open});console.log('onya')}
+  var open = ()=>{
+    this.setState({open:!this.state.open})
+    Router.push('/listPage')
+    console.log('yolo')
+  }
   return (
   <div>
     <Head>
@@ -42,11 +38,11 @@ export default class Index extends React.Component {
         <Markdown source={paragraph} />
         <input/>
         <Button
-          bsStyle = "success"
           style   = {{ marginLeft: 20 }}
           onClick = {open}
         >Load Transcript
         </Button>
+        <Link href={`/about`}><a>haha</a></Link>
       </div>
       <Collapse in={this.state.open} onClick={()=>this.setState({open:!this.state.open})}>
         <div>
@@ -70,9 +66,8 @@ export default class Index extends React.Component {
      }
 
      .markdown h3 {
-       margin        : 0;
-       padding       : 0;
-       text-transform: uppercase;
+       margin : 0;
+       padding: 0;
      }
   `}</style>
     </Layout>

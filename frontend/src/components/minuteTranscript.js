@@ -1,8 +1,8 @@
 import React from 'react';
-import { Button , Collapse } from 'react-bootstrap';
+import { Button , Collapse , Grid , Row } from 'react-bootstrap';
 import Head from 'next/head'
 import axios from 'axios';
-
+import FA from 'react-fontawesome';
 export default class MinuteTranscript extends React.Component {
   constructor(props) {
       super(props);
@@ -28,6 +28,7 @@ export default class MinuteTranscript extends React.Component {
       <div>
         <Head>
           <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" />
+          <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
         </Head>
         <table className="minuteTranscript">
           <thead>
@@ -36,21 +37,27 @@ export default class MinuteTranscript extends React.Component {
               <th>Transcript</th>
             </tr>
           </thead>
-                <tr>
-                <td>
-                  <Button onClick={this.summarize}>
-                    Summarize
-                  </Button>
-                </td>
-                <td>{this.state.summary}
-                </td>
-                </tr>
+            <tr>
+            <td>
+              <Button onClick={this.summarize}>
+                <FA name="eye" />
+              </Button>
+            </td>
+            <td>
+
+            <Collapse in={!(this.state.summary == 'Waiting')}>
+            <div style={{width:400}}>
+            {this.state.summary}
+            </div>
+            </Collapse>
+            </td>
+            </tr>
           <tbody>
             {this.props.data.map((each, i) => {
               return (
                 <tr key={i}>
                 <td>{each.startSeconds}</td>
-                <td>{each.text}</td>
+                <td style={{width:400}}>{each.text}</td>
                 </tr>
               )
             })}
